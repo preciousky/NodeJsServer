@@ -20,6 +20,8 @@ var srv = http.createServer(function (request, response) {
     });
     request.on('end', function () {
         console.log('buffer接收完成得到的数据:' + bufferData);
+        data = decodeURI(bufferData);
+            console.log(bufferData);
         jsonData = JSON.parse(bufferData);
         console.log('json化之后的数据： ');
         console.log(jsonData);
